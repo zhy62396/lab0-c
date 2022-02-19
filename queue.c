@@ -22,8 +22,7 @@ struct list_head *q_new()
         return NULL;
     }
     q->value = NULL;
-    q->list.prev = &q->list;
-    q->list.next = &q->list;
+    INIT_LIST_HEAD(&q->list);
     return &q->list;
 }
 
